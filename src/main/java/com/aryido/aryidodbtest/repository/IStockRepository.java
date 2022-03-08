@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
  * The type Stock、String represent bean and Id(primary key)
  */
 @Repository
-public interface IStockRepository extends JpaRepository<Stock, String> {
+public interface IStockRepository<T extends Stock> extends JpaRepository<T, String> {
 
+	//@Query( value = "select * from stock ?1")
+	//List<T> findBy(@Param("tableIndex") Integer tableIndex);
 }

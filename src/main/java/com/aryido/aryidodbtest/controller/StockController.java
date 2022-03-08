@@ -13,7 +13,7 @@ import java.util.List;
  **/
 @RestController
 public class StockController {
-	private IStockRepository stockRepository;
+	private final IStockRepository stockRepository;
 
 	@Autowired
 	public StockController(IStockRepository stockRepository){
@@ -21,7 +21,12 @@ public class StockController {
 	}
 
 	@GetMapping("/stocks")
-	public List<Stock> getAll(){
+	public List<? extends Stock> getAll(){
 		return stockRepository.findAll();
 	}
+
+	//@GetMapping("/stock/{index}")
+	//public List<? extends Stock> getAllBy(@PathVariable("index") int index){
+	//	return stockRepository.findAllByTable( index );
+	//}
 }
