@@ -13,6 +13,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IStockRepository<T extends Stock> extends JpaRepository<T, String> {
 
-	//@Query( value = "select * from stock ?1")
-	//List<T> findBy(@Param("tableIndex") Integer tableIndex);
 }

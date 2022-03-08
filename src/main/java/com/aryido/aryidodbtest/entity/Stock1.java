@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "STOCK1")
+@Table(name = "stock1")
 public class Stock1 extends Stock{
 
 }
