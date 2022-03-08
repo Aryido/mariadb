@@ -1,5 +1,6 @@
 package com.aryido.aryidodbtest.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -18,6 +19,7 @@ import javax.persistence.InheritanceType;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Stock {
