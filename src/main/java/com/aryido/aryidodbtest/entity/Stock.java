@@ -1,8 +1,9 @@
 package com.aryido.aryidodbtest.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
@@ -17,12 +18,13 @@ import javax.persistence.InheritanceType;
  * @author YunYang Lee
  */
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Stock {
+public class Stock {
     @Id
     @Column(name = "STOCK_SYMBOL")
     private String stockSymbol;

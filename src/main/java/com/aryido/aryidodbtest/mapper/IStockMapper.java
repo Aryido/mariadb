@@ -9,7 +9,5 @@ import java.util.List;
  * @author YunYang Lee
  */
 public interface IStockMapper {
-
 	List<Stock> findByTableName(@Param("tableName") String tableName);
-
 }

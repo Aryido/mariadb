@@ -1,9 +1,10 @@
 package com.aryido.aryidodbtest.controller;
 
 import com.aryido.aryidodbtest.entity.Stock;
-import com.aryido.aryidodbtest.repository.IStockRepository;
+import com.aryido.aryidodbtest.service.IStockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -13,24 +14,20 @@ import java.util.List;
  **/
 @RestController
 public class StockController {
-	private final IStockRepository stockRepository;
-	//private final IStockMapper stockMapper;
+	private final IStockService stockService;
+
 	@Autowired
-	public StockController(
-			IStockRepository stockRepository
-			//IStockMapper stockMapper
-	){
-		this.stockRepository = stockRepository;
-		//this.stockMapper = stockMapper;
+	public StockController( IStockService stockService ) {
+		this.stockService = stockService;
 	}
 
-	@GetMapping("/stocks")
-	public List<? extends Stock> getAll(){
-		return stockRepository.findAll();
+	@GetMapping( "/stocks" )
+	public List<? extends Stock> getAll() {
+		return stockService.getAll();
 	}
 
-	//@GetMapping("/stock/{tableName}")
-	//public List<? extends Stock> getAllBy(@PathVariable("tableName") String tableName){
-	//	return stockMapper.findByTableName( tableName );
-	//}
+	@GetMapping("/{tableName}/stocks")
+	public List<? extends Stock> getAllBy(@PathVariable("tableName") String tableName){
+		return stockService.getAllByTable( tableName );
+	}
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aryido.aryidodbtest.mapper.IStockMapper">
+
+	<select id="findByTableName" resultMap="StockResult" >
+		select * from ${tableName}
+	</select>
+	<resultMap type="com.aryido.aryidodbtest.entity.Stock" id="StockResult">
+		<id column="STOCK_SYMBOL" property="stockSymbol"/>
+		<result column="PRICE" property="price"/>
+		<result column="CREATE_TIME" property="createTime"/>
+	</resultMap>
+
+</mapper>

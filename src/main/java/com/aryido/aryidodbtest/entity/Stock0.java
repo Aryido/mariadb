@@ -1,8 +1,8 @@
 package com.aryido.aryidodbtest.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
@@ -13,9 +13,10 @@ import javax.persistence.Table;
  *
  * @author YunYang Lee
  */
-@EqualsAndHashCode(callSuper = true)
+
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @SuperBuilder
 @Table(name = "stock0")
