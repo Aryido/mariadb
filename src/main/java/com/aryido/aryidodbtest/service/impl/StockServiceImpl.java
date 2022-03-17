@@ -1,5 +1,6 @@
 package com.aryido.aryidodbtest.service.impl;
 
+import com.aryido.aryidodbtest.aspect.FinishLogShower;
 import com.aryido.aryidodbtest.entity.Stock;
 import com.aryido.aryidodbtest.mapper.IStockMapper;
 import com.aryido.aryidodbtest.repository.IStockRepository;
@@ -17,15 +18,17 @@ import java.util.List;
 public class StockServiceImpl implements IStockService {
 	private final IStockRepository stockRepository;
 
-	public StockServiceImpl( IStockRepository stockRepository ){
+	public StockServiceImpl( IStockRepository stockRepository ) {
 		this.stockRepository = stockRepository;
 	}
 
+	@FinishLogShower
 	@Override
-	public List<? extends Stock> getAll() {
+	public List getAll() {
 		return stockRepository.findAll();
 	}
 
+	@FinishLogShower
 	@Override
 	public List<? extends Stock> getAllByTable( String tableName ) {
 		SqlSession sqlSession = SqlSessionUtils.getSqlSession();

@@ -1,6 +1,7 @@
 package com.aryido.aryidodbtest;
 
 import com.aryido.aryidodbtest.entity.Stock;
+import com.aryido.aryidodbtest.entity.Stock0;
 import com.aryido.aryidodbtest.entity.Stock1;
 import com.aryido.aryidodbtest.mapper.IStockMapper;
 import com.aryido.aryidodbtest.repository.IStockRepository;
@@ -36,18 +37,18 @@ public class TestMyBatis {
 		stockRepository.save( build11 );
 		stockRepository.save( build12 );
 
-		//Stock0 build01 = Stock0.builder()
-		//		.stockSymbol( "2330" )
-		//		.price( "509.0" )
-		//		.createTime( "2020/12/25 15:32:06" )
-		//		.build();
-		//Stock0 build02 = Stock0.builder()
-		//		.stockSymbol( "0056" )
-		//		.price( "29.66" )
-		//		.createTime( "2020/12/25 15:32:06" )
-		//		.build();
-		//stockRepository.save( build01 );
-		//stockRepository.save( build02 );
+		Stock0 build01 = Stock0.builder()
+				.stockSymbol( "2330" )
+				.price( "509.0" )
+				.createTime( "2020/12/25 15:32:06" )
+				.build();
+		Stock0 build02 = Stock0.builder()
+				.stockSymbol( "0056" )
+				.price( "29.66" )
+				.createTime( "2020/12/25 15:32:06" )
+				.build();
+		stockRepository.save( build01 );
+		stockRepository.save( build02 );
 
 	}
 
